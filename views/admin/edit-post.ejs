@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>View / Edit Post</title>
+<style>
+  /* CSS styles */
+
+  /* Styles for the Back link */
+  .admin-back-link {
+    display: block; /* Display as block element */
+    margin-bottom: 20px; /* Add some space below the link */
+    text-decoration: none; /* Remove underline */
+    color: #333; /* Dark text color */
+    font-size: 16px; /* Set font size */
+  }
+
+  /* Styles for the admin title */
+  .admin-title {
+    display: flex; /* Display as flex container */
+    justify-content: space-between; /* Space between title and button */
+    align-items: center; /* Align items vertically */
+    margin-bottom: 20px; /* Add some space below the title */
+  }
+
+  .admin-title h2 {
+    font-size: 24px; /* Increase font size */
+    color: #e1e0e0; /* Light text color */
+  }
+
+  /* Styles for the delete button */
+  .btn-delete {
+    background-color: #ff4d4d; /* Red background color */
+    color: #fff; /* White text color */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Add padding */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Add pointer cursor */
+    transition: background-color 0.3s ease; /* Smooth transition */
+  }
+
+  .btn-delete:hover {
+    background-color: #ebe5e5; /* Darken button on hover */
+  }
+
+  /* Styles for the form */
+  .admin-form {
+    margin-bottom: 20px; /* Add some space below the form */
+  }
+
+  .admin-form label {
+    display: block; /* Display labels as block elements */
+    margin-bottom: 5px; /* Add space below each label */
+    font-weight: bold; /* Make labels bold */
+  }
+
+  .admin-form input[type="text"],
+  .admin-form textarea {
+    width: 100%; /* Make input fields and textareas full width */
+    padding: 10px; /* Add padding */
+    margin-bottom: 15px; /* Add space below each input field */
+    background-color: #15181c; /* Dark background color */
+    border: 1px solid #fef1f1; /* Add a border */
+    border-radius: 5px; /* Add border radius */
+  }
+
+  .admin-form textarea {
+    resize: vertical; /* Allow vertical resizing for textareas */
+  }
+
+  .admin-form input[type="submit"] {
+    background-color: #ffcc66; /* Light yellow background color */
+    color: #15181c; /* Dark text color */
+    border: 0; /* Remove border */
+    text-decoration: none;
+    font-size: 1rem; /* Increase font size */
+    padding: 10px 20px; /* Increase padding */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition */
+  }
+
+  .admin-form input[type="submit"]:hover {
+    background-color: #f1f1f1; /* Darken button on hover */
+  }
+</style>
+</head>
+<body>
+  <!-- Back link -->
+  <a href="/dashboard" class="admin-back-link">&larr; Back</a>
+
+  <!-- Admin title with delete button -->
+  <div class="admin-title">
+    <h2>View / Edit Post</h2>
+
+    <!-- Form to delete post -->
+    <form action="/delete-post/<%= data._id %>?_method=DELETE" method="POST">
+      <input type="submit" value="Delete" class="btn-delete btn">
+    </form>
+  </div>
+
+  <!-- Form to edit post -->
+  <form action="/edit-post/<%= data._id %>?_method=PUT" method="POST" class="admin-form">
+
+    <label for="title"><b>Title</b></label>
+    <!-- Input field for post title -->
+    <input type="text" placeholder="Post Title" name="title" value="<%= data.title %>">
+
+    <label for="body"><b>Content</b></label>
+    <!-- Textarea for post content -->
+    <textarea name="body" cols="50" rows="10"><%= data.body %></textarea>
+
+    <!-- Submit button to update post -->
+    <input type="submit" value="Update" class="btn">
+
+  </form>
+</body>
+</html>

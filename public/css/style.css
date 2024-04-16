@@ -1,0 +1,400 @@
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+/* Define CSS variables for color, font sizes, and border radius */
+:root {
+  --black: #15181c; /* Darker base */
+  --gray: #353b41; /* Darker gray */
+  --gray-light: #e7f0f8; /* Slightly lighter */
+  --red: #e6403e; /* A bolder red (adjust if needed) */
+  --accent: #ffcc66; /* A warm accent color */
+  --font-size-base: 0.95rem;
+  --font-size-md: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
+  --font-size-lg: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);
+  --font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+  --border-radius: 6px;
+}
+
+/* Body styles */
+body {
+  font-family: 'Roboto', sans-serif; /* Set font family */
+  color: var(--gray-light); /* Text color */
+  font-size: var(--font-size-base); /* Base font size */
+  background-color: var(--black); /* Background color */
+  margin: 20px; /* Add margin */
+}
+
+/* Anchor tag styles */
+a {
+  color: var(--accent); /* Set link color */
+  text-decoration: none; /* Remove default underline */
+}
+
+/* Heading styles */
+h1 {
+  font-size: var(--font-size-xl); /* Set font size for h1 */
+}
+
+h2 {
+  font-size: var(--font-size-lg); /* Set font size for h2 */
+}
+
+h3 {
+  font-size: var(--font-size-md); /* Set font size for h3 */
+}
+
+/* Input and textarea styles */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+select,
+textarea {
+  font-family: 'Roboto', sans-serif; /* Set font family */
+  font-size: 1rem; /* Set font size */
+  display: block; /* Make inputs and textareas block-level */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+  width: 100%; /* Make inputs and textareas full width */
+  padding: 0.7rem 0.75rem; /* Add padding */
+  margin-bottom: 1rem; /* Add margin bottom */
+  background-color: var(--gray); /* Background color */
+  color: var(--gray-light); /* Text color */
+  border: none; /* Remove default border */
+}
+
+/* Button styles */
+.btn {
+  background-color: #ffffb3; /* Button background color */
+  color: #ffffb3; /* Button text color */
+  border: none; /* Remove border */
+  padding: 16px 32px; /* Add padding */
+  cursor: pointer; /* Set cursor to pointer */
+  border-radius: var(--border-radius); /* Add border radius */
+}
+
+/* Button hover effect */
+.btn:hover {
+  background-color: var(--gray-light); /* Change background color on hover */
+  color: var(--black); /* Change text color on hover */
+}
+
+/* Delete button styles */
+.btn-delete {
+  padding: 10px 16px; /* Add padding */
+  background-color: var(--red); /* Button background color */
+  color: var(--gray-light); /* Button text color */
+}
+
+/* Delete button hover effect */
+.btn-delete:hover {
+  background-color: #b30000; /* Darken button color on hover */
+}
+
+/* Image styles */
+img {
+  width: 100%; /* Set image width to 100% */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Container styles */
+.container {
+  max-width: 982px; /* Set max-width */
+  margin: 0 auto; /* Center align container */
+  padding: 0 10px; /* Add horizontal padding */
+}
+
+/* Main content area styles */
+.main {
+  padding: 20px 0; /* Add padding */
+}
+
+/* Hero image styles */
+.hero-image {
+  max-height: 528px; /* Set max height */
+  filter: drop-shadow(0px 44px 34px rgba(0, 0, 0, 0.25)); /* Add drop shadow */
+  overflow: hidden; /* Hide overflow */
+  border-radius: var(--border-radius); /* Add border radius */
+}
+
+/* Header styles */
+.header {
+  display: grid; /* Use grid layout */
+  align-items: center; /* Center align items vertically */
+  grid-template-columns: 1fr 1fr; /* Define grid columns */
+  grid-template-rows: auto; /* Define grid rows */
+  grid-template-areas: "logo button" "menu menu"; /* Define grid areas */
+  padding-top: 10px; /* Add padding to top */
+}
+
+/* Header styles for medium screens and larger */
+@media only screen and (min-width: 768px) {
+  .header {
+    grid-template-columns: auto 1fr auto; /* Adjust grid columns */
+    grid-template-areas: "logo menu button"; /* Adjust grid areas */
+  }
+}
+
+/* Logo styles */
+.header__logo {
+  font-weight: 800; /* Set font weight */
+  font-size: 25px; /* Set font size */
+  text-decoration: none; /* Remove default underline */
+  grid-area: logo; /* Set grid area */
+}
+
+/* Logo hover effect */
+.header__logo:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
+
+/* Navigation styles */
+.header__nav {
+  justify-content: center; /* Center align items horizontally */
+  display: flex; /* Use flex layout */
+  grid-area: menu; /* Set grid area */
+}
+
+/* Button styles */
+.header__button {
+  display: flex; /* Use flex layout */
+  justify-content: end; /* Align items to end */
+  grid-area: button; /* Set grid area */
+}
+
+/* Button inside header button styles */
+.header__button button {
+  display: flex; /* Use flex layout */
+  gap: 0.3rem; /* Add gap between items */
+  align-items: center; /* Center align items vertically */
+  border: 0; /* Remove border */
+  padding: 
+
+6px 12px; /* Add padding */
+  background: none; /* Remove background */
+  border-radius: 10px; /* Add border radius */
+  font-size: 1rem; /* Set font size */
+  font-weight: 600; /* Set font weight */
+  color: var(--black); /* Text color */
+}
+
+/* Button hover effect */
+.header__button button:hover {
+  border: 2px solid var(--black); /* Add border on hover */
+}
+
+/* Navigation list styles */
+.header__nav ul {
+  list-style-type: none; /* Remove default list style */
+  display: flex; /* Use flex layout */
+  gap: 1rem; /* Add gap between items */
+  font-weight: 600; /* Set font weight */
+  padding: 0; /* Remove default padding */
+}
+
+/* Navigation link styles */
+.header__nav ul a {
+  padding: 10px; /* Add padding */
+  text-decoration: none; /* Remove default underline */
+}
+
+/* Active navigation link styles */
+.header__nav ul a.active {
+  color: #7E7E7E; /* Set color for active link */
+}
+
+/* Navigation link hover effect */
+.header__nav ul a:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
+
+/* Author section styles */
+.author {
+  padding: 10px 0; /* Add padding */
+  text-align: center; /* Center align text */
+}
+
+/* Author heading styles */
+.author__heading {
+  margin-top: 10px; /* Add top margin */
+  margin-bottom: 5px; /* Add bottom margin */
+}
+
+/* Author body styles */
+.author__body {
+  font-size: var(--font-size-md); /* Set font size */
+  margin: 5px 0 40px 0; /* Add margin */
+}
+
+/* Home Article List heading styles */
+.articles__heading {
+  display: flex; /* Use flex layout */
+  flex-wrap: wrap; /* Wrap items */
+  justify-content: center; /* Center align items horizontally */
+  gap: 20px; /* Add gap between items */
+}
+
+/* Home Article List styles */
+.article-ul {
+  display: flex; /* Use flex layout */
+  flex-wrap: wrap; /* Wrap items */
+  justify-content: space-between; /* Space items evenly */
+  gap: 30px; /* Add gap between boxes */
+}
+
+/* Article list item styles */
+.article-ul li {
+  width: 22%; /* Adjust width for better spacing */
+  margin-bottom: 20px; /* Add margin bottom for spacing between rows */
+  background-color: #444; /* Darker background color */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px; /* Decrease padding */
+  height: 260px; /* Increase height */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increased box shadow */
+  transition: box-shadow 0.3s ease; /* Smooth transition for hover effect */
+  font-size: 30px; /* Set font size */
+  color: #ffcc66; /* Text color */
+  text-align: center; /* Center align text */
+  display: flex; /* Use flex layout */
+  flex-direction: column; /* Align children in a column */
+  justify-content: space-between; /* Space items evenly */
+}
+
+/* Article list item hover effect */
+.article-ul li:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Increase shadow on hover */
+}
+
+/* Article list item link styles */
+.article-ul li a {
+  text-decoration: none; /* Remove default underline */
+  color: inherit; /* Inherit text color */
+}
+
+/* Article content styles */
+.article-ul li .article {
+  white-space: pre-wrap; /* Wrap text */
+}
+
+/* Footer styles */
+.footer {
+  margin: 4rem; /* Add margin */
+  text-align: center; /* Center align text */
+}
+
+/* Admin title styles */
+.admin-title {
+  display: flex; /* Use flex layout */
+  justify-content: space-between; /* Space items evenly */
+  align-items: center; /* Center align items vertically */
+  margin-bottom: 20px; /* Add margin bottom */
+}
+
+/* Admin posts list styles */
+.admin-posts {
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+  list-style: none; /* Remove default list styles */
+  display: flex; /* Use flex layout */
+  flex-wrap: wrap; /* Wrap items */
+  justify-content: space-between; /* Space items evenly */
+}
+
+/* Admin post item styles */
+.admin-posts li {
+  width: 22%; /* Adjust width for better spacing */
+  margin-bottom: 20px; /* Add margin bottom for spacing between rows */
+  background-color: #444; /* Darker background color */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px; /* Decrease padding */
+  height: 260px; /* Increase height */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increased box shadow */
+  transition: box-shadow 0.3s ease; /* Smooth transition for hover effect */
+  font-size: 30px; /* Set font size */
+  color: #fff; /* Text color */
+  text-align: center; /* Center align text */
+  display: flex; /* Use flex layout */
+  flex-direction: column; /* Align children in a column */
+  justify-content: space-between; /* Space items evenly */
+}
+
+/* Admin post item hover effect */
+.admin-posts li:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Increase shadow on hover */
+}
+
+/* Admin post controls styles */
+.admin-post-controls {
+  display: flex; /* Use flex layout */
+  justify-content: space-between; /* Space items evenly */
+  align-items: center; /* Center align items vertically */
+}
+
+/* Admin post controls form styles */
+.admin-post-controls form {
+  margin-top: auto; /* Push form to the bottom */
+}
+
+/* Admin post controls button styles */
+.admin-post-controls .btn  {
+  background-color: var(--black); /* Button background color */
+  color: #ffffb3; /* Button text color */
+  border: 0; /* Remove border */
+  text-decoration: none; /* Remove default underline */
+  font-size: 1rem; /* Set font size */
+  padding: 10px 20px; /* Add padding */
+  border-radius: 5px; /* Add border radius */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+/* Admin post controls button hover effect */
+.admin-post-controls .btn:hover {
+  background-color: #666; /* Darken button on hover */
+}
+
+/* SearchBar styles */
+.searchBar {
+  visibility: hidden; /* Hide searchBar by default */
+  transform: translateY(-100px); /* Move searchBar above screen */
+  background-color: var(--black); /* Background color */
+  padding: 4px 0; /* Add padding */
+  position: absolute; /* Position absolute */
+  left: 0; /* Align to left */
+  right: 0; /* Align to right */
+}
+
+/* Open searchBar styles */
+.searchBar.open {
+  transform: translateY(0
+
+); /* Move searchBar to original position */
+  transition: transform 0.1s; /* Add transition effect */
+}
+
+/* SearchBar input styles */
+.searchBar input {
+  margin: 0; /* Remove default margin */
+  border: 0; /* Remove default border */
+}
+
+/* Search close button styles */
+#searchClose {
+  position: absolute; /* Position absolute */
+  top: 0; /* Align to top */
+  right: 0; /* Align to right */
+  color: var(--gray-light); /* Button text color */
+  padding: 15px; /* Add padding */
+}
+
+/* Pagination styles */
+.pagination {
+  display: block; /* Use block layout */
+  text-decoration: none; /* Remove default underline */
+  color: #ffcc66; /* Text color */
+  font-weight: bold; /* Set font weight */
+}
+
+/* Pagination hover effect */
+.pagination:hover {
+  text-decoration: underline; /* Add underline on hover */
+}

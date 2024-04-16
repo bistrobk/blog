@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add New Post</title>
+<style>
+  /* CSS styles */
+
+  /* Styles for the Back link */
+  .admin-back-link {
+    margin-bottom: 20px; /* Add some space below the link */
+  }
+
+  /* Styles for the admin title */
+  .admin-title {
+    margin-bottom: 20px; /* Add some space below the title */
+  }
+
+  .admin-title h2 {
+    font-size: 24px; /* Increase font size */
+    color: #333; /* Dark text color */
+  }
+
+  /* Styles for the form */
+  .admin-form {
+    margin-bottom: 20px; /* Add some space below the form */
+  }
+
+  .admin-form label {
+    display: block; /* Display labels as block elements */
+    margin-bottom: 5px; /* Add space below each label */
+    font-weight: bold; /* Make labels bold */
+  }
+
+  .admin-form input[type="text"],
+  .admin-form textarea {
+    width: 100%; /* Make input fields and textareas full width */
+    padding: 10px; /* Add padding */
+    margin-bottom: 15px; /* Add space below each input field */
+    border: 1px solid #ccc; /* Add a border */
+    border-radius: 5px; /* Add border radius */
+  }
+
+  .admin-form textarea {
+    resize: vertical; /* Allow vertical resizing for textareas */
+  }
+
+  .admin-form input[type="submit"] {
+    background-color:  #ffcc66;
+    color: black;
+    border: 0;
+    text-decoration: none;
+    font-size: 1rem; /* Increase font size */
+    padding: 10px 20px; /* Increase padding */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition */
+  }
+
+  .admin-form input[type="submit"]:hover {
+    background-color: #666; /* Darken button on hover */
+  }
+</style>
+</head>
+<body>
+  <!-- Back link to dashboard -->
+  <a href="/dashboard" class="admin-back-link">&larr; Back</a>
+
+  <!-- Admin title -->
+  <div class="admin-title">
+    <h2>Add New Post</h2>
+  </div>
+
+  <!-- Form for adding new post -->
+  <form action="/add-post" method="POST" class="admin-form">
+
+    <!-- Title input -->
+    <label for="title"><b>Title</b></label>
+    <input type="text" placeholder="Post Title" name="title">
+
+    <!-- Content textarea -->
+    <label for="body"><b>Content</b></label>
+    <textarea name="body" cols="50" rows="10"></textarea>
+
+    <!-- Submit button -->
+    <input type="submit" value="Add" class="btn">
+
+  </form>
+</body>
+</html>

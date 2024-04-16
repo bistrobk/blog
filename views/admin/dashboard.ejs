@@ -1,0 +1,37 @@
+<div class="admin-title">
+  <!-- Admin title -->
+  <h2>Posts</h2>
+  <!-- Link to add new post -->
+  <a href="/add-post" class="button">+ Add New</a>
+</div>
+
+<!-- List of admin posts -->
+<ul class="admin-posts">
+
+  <!-- Loop through each post -->
+  <% data.forEach(post => { %>
+   
+    <!-- Post item -->
+    <li>
+      <!-- Link to view post details -->
+      <a href="/post/<%= post._id %>">
+        <!-- Display post title -->
+        <%= post.title %> &nearr;
+      </a>
+      <!-- Admin post controls -->
+      <div class="admin-post-controls">
+        <!-- Link to edit post -->
+        <a href="/edit-post/<%= post._id %>" class="btn">Edit</a>
+
+        <!-- Form to delete post -->
+        <form action="/delete-post/<%= post._id %>?_method=DELETE" method="POST">
+          <!-- Submit button to delete post -->
+          <input type="submit" value="Delete" class="btn-delete btn">
+        </form>
+
+      </div>
+
+    </li>
+
+  <% }) %>
+</ul>
