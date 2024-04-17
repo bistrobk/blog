@@ -6,7 +6,7 @@ const bcrypt = require('bcrypt'); // Importing bcrypt for password hashing
 const jwt = require('jsonwebtoken'); // Importing jwt for generating tokens
 
 const adminLayout = '../views/layouts/admin'; // Setting the layout file path for admin views
-const jwtSecret = MySecretBlog; 
+const jwtSecret = process.env.JWT_SECRET; // Getting JWT secret from environment variables
 
 /**
  * Middleware function to check if user is authenticated
