@@ -3,8 +3,6 @@
   <p class="author__body">Think, Unthink, Rethink Reality.</p>
 </div>
 
-<img src="/img/hero-image.jpg" alt="Philosophy" class="hero-image" width="981" height="528">
-
 <section class="articles">
   <h2 class="articles__heading">Latest Posts</h2>
 
@@ -12,29 +10,16 @@
     <% data.forEach(post => { %>
       <li>
         <a href="/post/<%= post._id %>">
-          <span><%= post.title %></span>
+          <img src="<%= post.imageUrl %>" alt="<%= post.title %>" class="post-image" width="300" height="200">
+          <span class="article-title"><%= post.title %></span>
           <span class="article-list__date"><br><br><%= post.createdAt.toDateString() %></span>
-          <style>
-          
-          
-        .article-title {
-            font-size: 100px; 
-          }
-          
-    
-           </style>
         </a>
       </li>
     <% }) %>
   </ul>
 
-
   <% if (nextPage !== null) { %>
     <a href="/?page=<%= nextPage %>" class="pagination">&lt; View Older Posts</a>
   <% } %>
- 
-  
-
-
 
 </section>
