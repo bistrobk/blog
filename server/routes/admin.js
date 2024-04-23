@@ -116,10 +116,19 @@ router.get('/add-post', authMiddleware, async (req, res) => {
 
 router.post('/add-post', authMiddleware, upload.single('image'), async (req, res) => {
   try {
+    let imageFileName = null;
+    // Check if an image file was uploaded
+    if (req.file) {
+      imageFileName = req.file.filename;
+    } else if (req.body.image) {
+      // If no file was uploaded, use the image URL provided in the form
+      imageFileName = req.body.image;
+    }
+
     const newPost = new Post({
       title: req.body.title,
       body: req.body.body,
-      image: req.file.filename
+      image: imageFileName // Use the file name if uploaded, or the URL if provided
     });
 
     await Post.create(newPost);
