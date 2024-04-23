@@ -34,7 +34,8 @@
   }
 
   .admin-form input[type="text"],
-  .admin-form textarea {
+  .admin-form textarea,
+  .admin-form input[type="file"] {
     width: 100%; /* Make input fields and textareas full width */
     padding: 10px; /* Add padding */
     margin-bottom: 15px; /* Add space below each input field */
@@ -72,7 +73,7 @@
   </div>
 
   <!-- Form for adding new post -->
-  <form action="/add-post" method="POST" class="admin-form">
+  <form action="/add-post" method="POST" class="admin-form" enctype="multipart/form-data">
 
     <!-- Title input -->
     <label for="title"><b>Title</b></label>
@@ -82,9 +83,14 @@
     <label for="body"><b>Content</b></label>
     <textarea name="body" cols="50" rows="10"></textarea>
 
+    <!-- Image upload -->
+    <label for="image"><b>Image</b></label>
+    <input type="file" name="image" accept="image/*">
+
     <!-- Submit button -->
     <input type="submit" value="Add" class="btn">
 
   </form>
 </body>
 </html>
+
