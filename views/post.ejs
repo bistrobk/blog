@@ -10,7 +10,6 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
-         
         }
 
         .container {
@@ -30,11 +29,22 @@
             line-height: 1.8;
             color: #d3c8c8;
         }
+
+        /* Style for the image */
+        .article img {
+            max-width: 100%; /* Ensure the image doesn't exceed its container width */
+            display: block; /* Ensure proper spacing */
+            margin-top: 20px; /* Add some space between the image and text */
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1><%= data.title %></h1>
+        <!-- Check if image exists and display it -->
+        <% if (data.image) { %>
+            <img src="/uploads/<%= data.image %>" alt="Article Image">
+        <% } %>
         <article class="article"><%= data.body %></article>
     </div>
 </body>
